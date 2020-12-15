@@ -9,7 +9,8 @@ function Form({values, formChange, formSubmit}) {
   }
 
   const onSubmit = (e) => {
-    console.log(e)
+    e.preventDefault()
+    formSubmit()
   }
 
 

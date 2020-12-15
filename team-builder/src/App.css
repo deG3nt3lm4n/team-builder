@@ -20,3 +20,14 @@
 .coolForm label, .coolForm input, .coolForm select{
   display: block;
 }
+
+.myTeam{
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: black;
+  color: green;
+}

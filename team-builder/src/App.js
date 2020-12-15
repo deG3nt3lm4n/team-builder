@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import './App.css';
 import Form from './components/Form';
+import Team from './components/Team';
 
 const initialFormValues = {
   name: '',
@@ -25,7 +26,7 @@ function App() {
   const [teamBuilder, setTeamBuilder] = useState(teamMembers)
   const [formValues, setFormValues] = useState(initialFormValues)
 
-  const formChange = (value , name) => {
+  const formChange = (name , value) => {
    setFormValues({
      ...formValues,
      [name]: value
@@ -38,7 +39,8 @@ function App() {
       email: formValues.email,
       role: formValues.role
     }
-    console.log(newBuilder)
+    setTeamBuilder([...teamBuilder, newBuilder])
+    setFormValues(initialFormValues)
   }
 
 
@@ -48,6 +50,7 @@ function App() {
       <h1>My little thing</h1>
       <p>Team Builder setup..</p>
       <Form values={formValues} formChange={formChange} formSubmit={formSubmit}/>
+      <Team teamMemeber={teamBuilder} />
     </div>
   );
 }
